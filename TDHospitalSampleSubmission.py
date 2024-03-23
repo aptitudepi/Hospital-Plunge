@@ -73,7 +73,7 @@ class Solution:
 
         data_path = 'TD_HOSPITAL_TRAIN.csv'
         df_train = pd.read_csv(data_path)
-        y, X = self.split_feature_label(df_train)
+        _, X = self.split_feature_label(df_train)
         combined = pd.concat([X, df])
         combined = self.data_preprocessing(combined)
         combined = self.standardize(combined)
