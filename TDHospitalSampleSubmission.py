@@ -16,9 +16,6 @@ class Solution:
        self.model = tf.keras.models.load_model('example.keras')
 
         # # Load the saved model using pickle
-
-
-    import pandas as pd
     def data_preprocessing(self,df):
         # col_to_keep = ['death', 'age', 'blood', 'reflex', 'bloodchem1', 'bloodchem2', 'psych1', 'glucose', 'temperature','heart', 'breathing']
         #  df = df[col_to_keep]
