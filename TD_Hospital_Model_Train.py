@@ -26,7 +26,7 @@ def data_preprocessing(df):
     df = pd.get_dummies(df, columns=non_numeric_columns)
 
     return df
-    
+
 def split_feature_label(df):
     y = df['death']
     X = df.drop(columns=['death'])
@@ -98,4 +98,3 @@ if __name__ == "__main__":
     y, X = split_feature_label(cleaned_data)
     X = standardize(X)
     train_model(X, y)
-    

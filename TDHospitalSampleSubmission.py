@@ -87,7 +87,7 @@ class Solution:
         df_test = pca.transform(df_test)
         prediction = self.model.predict(df_test)
         print(prediction)
-        
+
         return 1-float(prediction[0][0])
 
 
