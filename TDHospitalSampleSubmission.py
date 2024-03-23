@@ -1,4 +1,3 @@
-# Sample participant submission for testing
 from flask import Flask, jsonify, request
 import tensorflow as tf
 import pandas as pd
@@ -15,12 +14,8 @@ class Solution:
     def __init__(self):
         #Initialize any global variables here
        self.model = tf.keras.models.load_model('example.keras')
-     #   self.model = load('random_forest_model.joblib')
-        # import pickle
 
         # # Load the saved model using pickle
-        # with open('gradientboost.pkl', 'rb') as file:
-        #     self.model = pickle.load(file)
 
 
     import pandas as pd
@@ -31,10 +26,6 @@ class Solution:
         df.fillna(0, inplace=True)
 
         # # Get column names of non-numeric columns
-        # non_numeric_columns = df.select_dtypes(exclude=['number']).columns
-        #
-        # # Drop non-numeric columns from the DataFrame
-        # df = df.drop(columns=non_numeric_columns)
 
         # Get non-numeric columns
         non_numeric_columns = df.select_dtypes(exclude=['number']).columns
@@ -88,7 +79,6 @@ class Solution:
 
         data_path = 'TD_HOSPITAL_TRAIN.csv'
         df_train = pd.read_csv(data_path)
-      #  print(df_train.shape)
         y, X = self.split_feature_label(df_train)
         combined = pd.concat([X, df])
         combined = self.data_preprocessing(combined)
@@ -101,12 +91,6 @@ class Solution:
         pca.fit(df_train)
         print(df_test)
         df_test = pca.transform(df_test)
-        # df = self.data_preprocessing(df)
-        # df = self.standardize(df)
-        # print(df)
-        # print(df.columns)
-        # print(df.shape)
-       # print(df_test.shape)
         prediction = self.model.predict(df_test)
         print(prediction)
         

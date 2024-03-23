@@ -24,10 +24,6 @@ def data_preprocessing(df):
 
 
     # # Get column names of non-numeric columns
-    # non_numeric_columns = df.select_dtypes(exclude=['number']).columns
-    #
-    # # Drop non-numeric columns from the DataFrame
-    # df = df.drop(columns=non_numeric_columns)
 
 
     # Get non-numeric columns
@@ -45,12 +41,6 @@ def split_feature_label(df):
     # print(X)
     # print(y)
 
-    # death_0 = y.tolist().count(0)
-    # death_1 = y.tolist().count(1)
-    # percent_death_0 = 100 * death_0 / (death_0 + death_1)
-    # percent_death_1 = 100 * death_1 / (death_0 + death_1)
-    # print(f'Survived: {death_0}, or {percent_death_0:.2f}%')
-    # print(f'Died: {death_1}, or {percent_death_1:.2f}%')
 
 def standardize(X):
     scaler = StandardScaler()
@@ -104,7 +94,6 @@ def train_model(X, y):
         print(f"Recall: {recall}")
         print(f"Accuracy: {accuracy}")
         print("")
-  #  model.fit(X,y)
     model.save('example.keras')
 
 
