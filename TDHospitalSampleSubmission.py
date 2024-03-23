@@ -60,7 +60,7 @@ class Solution:
                                                               psych5, psych6, information, cancer]
 
         # Create a dictionary for the DataFrame
-        df_dict = {label: value for label, value in zip(labels, values)}
+        df_dict = dict(zip(labels, values))
         import csv
         with open('parameters.csv', 'w', newline='') as csvfile:
             fieldnames = list(df_dict.keys())
