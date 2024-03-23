@@ -1,11 +1,8 @@
-from flask import Flask, jsonify, request
+from flask import Flask, request
 import tensorflow as tf
 import pandas as pd
-import random
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
-from joblib import load
-from sklearn.ensemble import RandomForestClassifier
 
 app = Flask(__name__)
 

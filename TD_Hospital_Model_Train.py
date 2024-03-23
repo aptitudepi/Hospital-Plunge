@@ -1,15 +1,8 @@
-import numpy as np
 import pandas as pd
-import tensorflow as tf
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split, KFold
+from sklearn.model_selection import KFold
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
-from sklearn.svm import SVC
-from tensorflow import keras
-from keras import layers
 from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_score
-from imblearn.over_sampling import RandomOverSampler
 from keras import Sequential
 from keras.layers import Dropout
 from keras.layers import Dense
